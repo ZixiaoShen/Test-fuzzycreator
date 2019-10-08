@@ -1,5 +1,4 @@
 from decimal import Decimal
-
 from fuzzycreator.fuzzy_sets.discrete_t1_fuzzy_set import DiscreteT1FuzzySet
 from fuzzycreator.measures import similarity_t1
 from fuzzycreator import visualisations
