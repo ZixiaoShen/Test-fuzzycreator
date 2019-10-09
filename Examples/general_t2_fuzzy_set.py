@@ -7,6 +7,9 @@ from fuzzycreator.membership_functions.trapezoidal import Trapezoidal
 from fuzzycreator.membership_functions.gaussian import Gaussian
 from fuzzycreator.fuzzy_sets.general_t2_fuzzy_set import GeneralT2FuzzySet
 
+from fuzzycreator.measures import similarity_gt2
+from fuzzycreator.measures import distance_gt2
+
 from fuzzycreator import visualisations
 
 gs.global_uod = (0, 20)
@@ -21,6 +24,21 @@ D = GeneralT2FuzzySet(Gaussian(15, 1), Gaussian(16, 1))
 
 print(A.calculate_membership(Decimal('0.5'), Decimal('0.25')))
 print(A.calculate_secondary_membership(Decimal('3.5'), Decimal('0.5')))
+print(A.calculate_alpha_cut_upper(Decimal('0.5'), Decimal('0.25')))
+print(A.calculate_alpha_cut_lower(Decimal('0.5'), Decimal('0.25')))
 
+cos = A.calculate_centre_of_sets()
+for z in sorted(cos.keys()):
+    print('\tz =', z, cos[z])
+print('Centre of type reduced set of A:\n\t')
+print(A.calculate_overall_centre_of_sets())
 
 visualisations.plot_sets((A, B, C, D))
+
+print('Demonstrate measuring similarity')
+print('s(A, B) =', similarity_gt2.jaccard(A, B))
+print('s(C, D) =', similarity_gt2.jaccard(C, D))
+
+print('Demonstrate measuring distance')
+print('d(A, B) =', distance_gt2.mcculloch(A, B))
+print('d(C, D) =', distance_gt2.mcculloch(C, D))
