@@ -13,7 +13,7 @@ from fuzzycreator import visualisations
 
 A = FuzzySet(Triangular(0, 2, 4))
 B = FuzzySet(Trapezoidal(3, 5, 7, 9))
-C = FuzzySet(Gaussian(10, 1))
+C = FuzzySet(Gaussian(5, 1))
 
 
 # calculations
