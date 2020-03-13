@@ -2,10 +2,8 @@ from fuzzycreator.membership_functions.triangular import Triangular
 from fuzzycreator.membership_functions.trapezoidal import Trapezoidal
 from fuzzycreator.membership_functions.gaussian import Gaussian
 from fuzzycreator.fuzzy_sets.fuzzy_set import FuzzySet
-
 from fuzzycreator.measures import similarity_t1
 from fuzzycreator.measures import distance_t1
-
 from fuzzycreator import global_settings as gs
 from fuzzycreator import visualisations
 
